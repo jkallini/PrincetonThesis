@@ -1,0 +1,61 @@
+#!/bin/bash
+# findccps
+
+
+echo "======================================================================================================================
+"
+
+echo "Finding coordination phrases in Academic genre."
+echo ""
+
+python ccpfinder.py csv/w_acad_????/w_acad_????.csv
+
+echo "Processing of Academic genre done.
+"
+
+echo "======================================================================================================================
+"
+
+echo "Finding coordination phrases in Fiction genre."
+echo ""
+
+python ccpfinder.py csv/w_fic_????/w_fic_????.csv
+
+echo "Processing of Fiction genre done.
+"
+
+echo "======================================================================================================================
+"
+
+echo "Finding coordination phrases in Magazine genre."
+echo ""
+
+python ccpfinder.py csv/w_mag_????/w_mag_????.csv
+
+echo "Processing of Magazine genre done.
+"
+
+echo "======================================================================================================================
+"
+
+echo "Finding coordination phrases in News genre."
+echo ""
+
+python ccpfinder.py csv/w_news_????/w_news_????.csv
+
+echo "Processing of News genre done.
+"
+
+echo "======================================================================================================================
+"
+
+echo "Finding coordination phrases in Spoken genre."
+echo ""
+
+python ccpfinder.py csv/w_spok_????/w_spok_????.csv
+
+echo "Processing of Spoken genre done.
+"
+
+echo "======================================================================================================================
+"

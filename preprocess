@@ -1,0 +1,46 @@
+#!/bin/bash
+# preprocess
+
+
+echo "======================================================================================================================
+"
+
+# Count number of COCA files to parse
+shopt -s nullglob
+numfiles=(COCA/*/*)
+numfiles=${#numfiles[@]}
+
+echo "Cleaning all $numfiles files in COCA directory."
+echo ""
+
+python COCAcleaner.py COCA/*/*
+
+echo "Cleaning done. Files are stored in 'cleaned' directory.
+"
+
+echo "======================================================================================================================
+"
+
+echo "Sampling 10 MB from each of the files."
+echo ""
+
+python filesampler.py cleaned/*
+
+echo "Sampling done. Files are stored in 'sampled' directory.
+"
+
+echo "======================================================================================================================
+"
+
+# Count number of files in cleaned/
+shopt -s nullglob
+numfiles=(cleaned/*)
+numfiles=${#numfiles[@]}
+
+echo "Parsing each file."
+echo ""
+
+python fileparser.py sampled/*
+
+echo "Parsing done. Files are stored in 'csv' directory.
+"
